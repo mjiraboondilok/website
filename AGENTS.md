@@ -79,13 +79,21 @@ Where to add things:
 
 ## Verification
 
+**A production build is _not_ required to check your work.** `pnpm astro check`
+already type-checks frontmatter and templates, validates props, and surfaces the
+same errors a build would — without the cost of a full build. Don't run
+`pnpm build` just to verify a change.
+
 Before considering any change complete, all must pass:
 
 1. **`pnpm astro check`** — type-checks `.astro` frontmatter and `.ts` files and
    catches template/prop errors (enforces `strict`).
 2. **`pnpm lint`** — ESLint must report no errors.
 3. **`pnpm format:check`** — formatting must be clean (run `pnpm format` to fix).
-4. **`pnpm build`** — the production build must succeed.
+
+Only run **`pnpm build`** when a change specifically affects the build/output
+itself (e.g. `astro.config.mjs`, asset pipeline) and you need to confirm the
+production build succeeds.
 
 For UI changes, also sanity-check in the browser via `pnpm dev`
 (`http://localhost:4321`).
