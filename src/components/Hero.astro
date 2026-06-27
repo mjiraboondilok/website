@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import profile from "../assets/profile.jpeg";
+---
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <Image
+      class="photo"
+      src={profile}
+      alt="Profile picture"
+      width={800}
+      height={1200}
+    />
+    <div>
+      <div class="badge">
+        <span class="dot"></span><span>Open to new opportunities</span>
+      </div>
+      <h1>Mag <span class="accent">Jiraboondilok</span></h1>
+      <p>Engineering for good.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 102px;
+    padding-bottom: 80px;
+  }
+  .hero-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-grid > div {
+    flex: 1 0 360px;
+    max-width: 100%;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid hsl(141, 33%, 26%);
+    border-radius: 32px;
+    font-family: var(--font-fc-mittraphap), sans-serif;
+    font-size: 13px;
+    color: hsl(130, 24%, 69%);
+    margin-bottom: 32px;
+  }
+  .badge .dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: hsl(141, 61%, 69%);
+  }
+  .hero h1 {
+    font-weight: bold;
+    font-size: min(88px, (100vw - 56px) / 7);
+    margin: 0 0 40px;
+  }
+  .hero h1 .accent {
+    color: hsl(141, 61%, 69%);
+  }
+  .hero p {
+    font-size: 23px;
+    color: hsl(104, 16%, 73%);
+  }
+  .photo {
+    display: block;
+    flex: 0 0 240px;
+    width: 240px;
+    max-width: 100%;
+    aspect-ratio: 1;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 24px;
+    border: 1px solid hsl(141, 33%, 26%);
+  }
+
+  @media (max-width: 820px) {
+    .hero-grid {
+      gap: 32px;
+    }
+    .hero p {
+      font-size: 19px;
+    }
+  }
+</style>

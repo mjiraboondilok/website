@@ -1,0 +1,55 @@
+---
+import Hero from "./Hero.astro";
+---
+
+<Hero />
+
+<style is:global>
+  * {
+    box-sizing: border-box;
+    text-box: trim-both cap alphabetic;
+  }
+  body {
+    margin: 0;
+    background: hsl(142, 33%, 11%);
+    color: hsl(80, 32%, 93%);
+    font-family: var(--font-fc-mittraphap), sans-serif;
+  }
+  ::selection {
+    background: hsl(141, 61%, 69%);
+    color: hsl(146, 35%, 9%);
+  }
+  h1,
+  h2,
+  h3,
+  .grotesk {
+    font-family: var(--font-fc-mittraphap), sans-serif;
+  }
+  a {
+    color: inherit;
+  }
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  /* SECTION LABEL */
+  .label {
+    font-family: var(--font-fc-mittraphap), sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: hsl(131, 18%, 57%);
+    margin: 0 0 32px;
+  }
+
+  @media (max-width: 820px) {
+    .wrap {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+</style>
